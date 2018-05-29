@@ -25,7 +25,7 @@ SECRET_KEY = 'sb-a678!2$strp2e*@s1t-+3bgc!$5&)n&8*lk@9kx5goh+j(v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['corein.pythonanywhere.com']
 
 
 # Application definition
