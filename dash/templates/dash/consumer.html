@@ -1,0 +1,55 @@
+{% extends "dash/layout.html" %}
+
+
+{% block content %}
+	<div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">소비자 리스트</h1>
+            </div>
+			<div class="container">
+			    <table class="table table-striped">
+			        <thead>
+				        <tr>
+				            <td><B>No.</B></td>
+				            <td><B>접수일자</B></td>
+				            <td><B>접수직원</B></td>
+				            <td><B>브랜드</B></td>
+				            <td><B>담당SV</B></td>
+				            <td><B>가맹점</B></td>
+				            <td><B>접수경로</B></td>
+				            <td><B>분류</B></td>
+				            <td><B>접수내용</B></td>
+				            <td><B>처리직원</B></td>
+				            <td><B>처리내용</B></td>
+				            <td><B>처리일자</B></td>
+				            <td><B>비고</B></td>
+				        </tr>
+			        </thead>
+			        <!-- 이 부분이 바뀌었습니다 -->
+			        <tbody>
+				        {% for c in moa %}
+				        <tr>
+				            <td> {{ c.id }} </td>
+				            <td> {{ c.receipt_date }} </td>
+				            <td> {{ c.receipt_staff }} </td>
+				            <td> {{ c.brand }} </td>
+				            <!-- <td>기호 {{ candidate.party_number }} 번</td> -->
+				            <td> {{ c.supervisor }} </td>
+				            <td> {{ c.affiliated_store }} </td>
+				            <td> {{ c.receipt_channel }} </td>
+				            <td> {{ c.classification }} </td>
+				            <td> {{ c.receipt_contents }} </td>
+				            <td> {{ c.answer_staff }} </td>
+				            <td> {{ c.answer_contents }} </td>
+				            <td> {{ c.answer_date }} </td>
+				            <td> {{ c.note }} </td>
+				        </tr>
+				        {% endfor %}
+				        <!-- 여기까지 -->
+			        <tbody>
+			    </table>
+			</div>
+		</div>
+	</div>
+{% endblock %}
